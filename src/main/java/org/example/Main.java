@@ -2,6 +2,7 @@ package org.example;
 
 import org.jgrapht.graph.DefaultWeightedEdge;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static org.example.Grafos.grafo;
@@ -41,86 +42,103 @@ public class Main {
     }
 
     public static void creaBarcos() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Creando barco");
-        System.out.println("Dime el nombre del barco");
-        String nombre = sc.nextLine();
-        System.out.println("Dime la capacidad del barco");
-        int capacidad = sc.nextInt();
-        System.out.println("Dime la tripulacion del barco");
-        int tripulacion = sc.nextInt();
-        System.out.println("Dime la velocidad del barco");
-        double velocidad = sc.nextDouble();
-        Barco barco = new Barco(nombre, capacidad, tripulacion, velocidad);
-        grafo.addVertex(barco);
-
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Creando barco");
+            System.out.println("Dime el nombre del barco");
+            String nombre = sc.nextLine();
+            System.out.println("Dime la capacidad del barco");
+            int capacidad = sc.nextInt();
+            System.out.println("Dime la tripulacion del barco");
+            int tripulacion = sc.nextInt();
+            System.out.println("Dime la velocidad del barco");
+            double velocidad = sc.nextDouble();
+            Barco barco = new Barco(nombre, capacidad, tripulacion, velocidad);
+            grafo.addVertex(barco);
+        } catch (InputMismatchException e) {
+            System.out.println("Error: entrada no válida. " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Ha ocurrido un error: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     public static void creaArista() {
-        if (grafo.vertexSet().size() < 2) {
-            System.out.println("No hay suficientes barcos para crear una arista");
-        } else {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Dime el nombre del barco origen");
-            String nombreOrigen = sc.nextLine();
-            System.out.println("Dime el nombre del barco destino");
-            String nombreDestino = sc.nextLine();
-            System.out.println("Dime el peso de la arista");
-            double peso = sc.nextDouble();
-            Barco barcoOrigen = null;
-            Barco barcoDestino = null;
-            for (Barco barco : grafo.vertexSet()) {
-                if (barco.getNombre().equals(nombreOrigen)) {
-                    barcoOrigen = barco;
-                }
-                if (barco.getNombre().equals(nombreDestino)) {
-                    barcoDestino = barco;
-                }
-            }
-            if (barcoOrigen == null || barcoDestino == null) {
-                System.out.println("No se ha encontrado alguno de los barcos");
+        try {
+            if (grafo.vertexSet().size() < 2) {
+                System.out.println("No hay suficientes barcos para crear una arista");
             } else {
-                DefaultWeightedEdge arista = grafo.addEdge(barcoOrigen, barcoDestino);
-                grafo.setEdgeWeight(arista, peso);
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Dime el nombre del barco origen");
+                String nombreOrigen = sc.nextLine();
+                System.out.println("Dime el nombre del barco destino");
+                String nombreDestino = sc.nextLine();
+                System.out.println("Dime el peso de la arista");
+                double peso = sc.nextDouble();
+                Barco barcoOrigen = null;
+                Barco barcoDestino = null;
+                for (Barco barco : grafo.vertexSet()) {
+                    if (barco.getNombre().equals(nombreOrigen)) {
+                        barcoOrigen = barco;
+                    }
+                    if (barco.getNombre().equals(nombreDestino)) {
+                        barcoDestino = barco;
+                    }
+                }
+                if (barcoOrigen == null || barcoDestino == null) {
+                    System.out.println("No se ha encontrado alguno de los barcos");
+                } else {
+                    DefaultWeightedEdge arista = grafo.addEdge(barcoOrigen, barcoDestino);
+                    grafo.setEdgeWeight(arista, peso);
+                }
             }
+        } catch (InputMismatchException e) {
+            System.out.println("Error: entrada no válida. " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Ha ocurrido un error: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
     public static void mostrarGrafo() {
-        System.out.println("Direccion del grafo que hemos predefinido nosotros\n");
-        for (Barco barco : grafo.vertexSet()) {
+        try {
+            System.out.println("Direccion del grafo que hemos predefinido nosotros\n");
+            for (Barco barco : grafo.vertexSet()) {
+                System.out.println("Vértice: " + barco.getNombre());
+                System.out.println("Aristas:");
+                for (DefaultWeightedEdge arista : grafo.edgesOf(barco)) {
+                    Barco barcoOrigen = grafo.getEdgeSource(arista);
+                    if (barcoOrigen == barco) {
+                        Barco barcoFin = grafo.getEdgeTarget(arista);
+                        double peso = grafo.getEdgeWeight(arista);
+                        System.out.println("  Desde " + barcoOrigen.getNombre() +
+                                " hasta " + barcoFin.getNombre() +
+                                " con peso " + peso);
+                    }
+                }
+                System.out.println();
+            }
 
-            System.out.println("Vértice: " + barco.getNombre());
-            System.out.println("Aristas:");
-            for (DefaultWeightedEdge arista : grafo.edgesOf(barco)) {
-                Barco barcoOrigen = grafo.getEdgeSource(arista);
-                if (barcoOrigen == barco) {
+            System.out.println("----------------------------------");
+            System.out.println("----------------------------------");
+            System.out.println("aristas a las que pertenece cada vertice\n");
+            for (Barco barco : grafo.vertexSet()) {
+
+                System.out.println("Vértice: " + barco.getNombre());
+                System.out.println("Aristas:");
+                for (DefaultWeightedEdge arista : grafo.edgesOf(barco)) {
+                    Barco barcoOrigen = grafo.getEdgeSource(arista);
                     Barco barcoFin = grafo.getEdgeTarget(arista);
                     double peso = grafo.getEdgeWeight(arista);
                     System.out.println("  Desde " + barcoOrigen.getNombre() +
                             " hasta " + barcoFin.getNombre() +
                             " con peso " + peso);
                 }
+                System.out.println();
             }
-            System.out.println();
-        }
-
-        System.out.println("----------------------------------");
-        System.out.println("----------------------------------");
-        System.out.println("aristas a las que pertenece cada vertice\n");
-        for (Barco barco : grafo.vertexSet()) {
-
-            System.out.println("Vértice: " + barco.getNombre());
-            System.out.println("Aristas:");
-            for (DefaultWeightedEdge arista : grafo.edgesOf(barco)) {
-                Barco barcoOrigen = grafo.getEdgeSource(arista);
-                Barco barcoFin = grafo.getEdgeTarget(arista);
-                double peso = grafo.getEdgeWeight(arista);
-                System.out.println("  Desde " + barcoOrigen.getNombre() +
-                        " hasta " + barcoFin.getNombre() +
-                        " con peso " + peso);
-            }
-            System.out.println();
+        }catch (Exception e) {
+            System.out.println("Ha ocurrido un error: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }

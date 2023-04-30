@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb10a837-3df5-4cb6-973c-83423eae1511" name="Changes" comment="Clase barco">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+    <list default="true" id="cb10a837-3df5-4cb6-973c-83423eae1511" name="Changes" comment="Clase grafo, aqui por usar solo uso static Graph&lt;Barco, DefaultWeightedEdge&gt; grafo = new DefaultDirectedWeightedGraph&lt;&gt;(DefaultWeightedEdge.class);&#10;Lo demas lo he usado un poco de guia para poder hacer un main en el que se puedan crear barcos,aristas y te muestre el grafo creadó">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,21 +35,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Grafos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Grafos" />
@@ -97,7 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682842868302</updated>
-      <workItem from="1682842869613" duration="4932000" />
+      <workItem from="1682842869613" duration="5756000" />
     </task>
     <task id="LOCAL-00001" summary="Clase barco">
       <created>1682846787494</created>
@@ -106,7 +101,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682846787494</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Clase grafo, aqui por usar solo uso static Graph&lt;Barco, DefaultWeightedEdge&gt; grafo = new DefaultDirectedWeightedGraph&lt;&gt;(DefaultWeightedEdge.class);&#10;Lo demas lo he usado un poco de guia para poder hacer un main en el que se puedan crear barcos,aristas y te muestre el grafo creadó">
+      <created>1682848043787</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682848043787</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Clase grafo, aqui por usar solo uso static Graph&lt;Barco, DefaultWeightedEdge&gt; grafo = new DefaultDirectedWeightedGraph&lt;&gt;(DefaultWeightedEdge.class);&#10;Lo demas lo he usado un poco de guia para poder hacer un main en el que se puedan crear barcos,aristas y te muestre el grafo creadó">
+      <created>1682848057040</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682848057040</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +134,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Clase barco" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clase barco" />
+    <MESSAGE value="Clase grafo, aqui por usar solo uso static Graph&lt;Barco, DefaultWeightedEdge&gt; grafo = new DefaultDirectedWeightedGraph&lt;&gt;(DefaultWeightedEdge.class);&#10;Lo demas lo he usado un poco de guia para poder hacer un main en el que se puedan crear barcos,aristas y te muestre el grafo creadó" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clase grafo, aqui por usar solo uso static Graph&lt;Barco, DefaultWeightedEdge&gt; grafo = new DefaultDirectedWeightedGraph&lt;&gt;(DefaultWeightedEdge.class);&#10;Lo demas lo he usado un poco de guia para poder hacer un main en el que se puedan crear barcos,aristas y te muestre el grafo creadó" />
   </component>
 </project>
